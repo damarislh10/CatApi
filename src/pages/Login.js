@@ -6,6 +6,7 @@ import { loginGoogle } from '../redux/actions/actionLogin';
 
 //Material UI
 import { makeStyles } from '@material-ui/core';
+import { ButtonGoogle } from '../styled/styledcomponents';
 
 const Login = () => {
   const classes = useStyles();
@@ -51,12 +52,12 @@ const Login = () => {
                 type='submit'
                 className={classes.login__signInButton}>Sign In</button>
 
-            <button 
+            <ButtonGoogle 
                 type='button'
                 onClick={handleGoogle}
                 >
                     <img width='20px' height='20px' src='https://cdn-icons-png.flaticon.com/512/2965/2965278.png' alt='Google Icon'/>
-                    Sign with Google</button>
+                    Sign with Google</ButtonGoogle>
                    
               
             </form>

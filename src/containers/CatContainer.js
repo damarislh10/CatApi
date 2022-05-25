@@ -17,7 +17,7 @@ export const CatContainer = () => {
   return (
     <div>
       {cats.map((cat, index) => (
-        <CatCard cat={cat} />
+        <CatCard key={index} cat={cat} />
       ))}
     </div>
   );

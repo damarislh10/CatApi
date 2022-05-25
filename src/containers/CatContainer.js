@@ -12,7 +12,7 @@ export const CatContainer = () => {
 
   useEffect(() => {
     dispatch(listCatsAsync());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

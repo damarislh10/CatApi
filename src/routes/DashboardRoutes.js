@@ -2,14 +2,15 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
-import { ListCats } from '../components/ListCats'
+import { Cats } from '../pages/Cats'
 import Home from '../pages/Home'
 
 const DashboardRoutes = () => {
   return (
     <>
     <Routes>
-    <Route path="/" element={<ListCats />} />
+    <Route path="/" element={<Home />} />
+    <Route path="/cats" element={<Cats />} />
     <Route path="*" element={<Navigate to='/' />} />
     </Routes>
     </>

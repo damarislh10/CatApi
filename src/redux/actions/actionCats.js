@@ -11,6 +11,7 @@ export const listCatsAsync = () => {
         ...doc.data(),
       });
     });
+    console.log(cats);
     dispatch(listSync(cats));
   };
 };

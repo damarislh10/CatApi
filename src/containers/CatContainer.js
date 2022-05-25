@@ -1,8 +1,11 @@
+//map
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { CatCard } from "../components/CatCard";
 import { listCatsAsync } from "../redux/actions/actionCats";
+import { ContainerCard } from "../styled/styledcomponents";
 
-export const ListCats = () => {
+export const CatContainer = () => {
   const { cats } = useSelector((state) => state.cats);
   console.log(cats);
   const dispatch = useDispatch();
@@ -11,5 +14,11 @@ export const ListCats = () => {
     dispatch(listCatsAsync());
   }, []);
 
-  return <div>ListCats</div>;
+  return (
+    <div>
+      {cats.map((cat, index) => (
+        <CatCard cat={cat} />
+      ))}
+    </div>
+  );
 };

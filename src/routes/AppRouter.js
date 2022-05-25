@@ -8,9 +8,6 @@ import PrivateRoutes from './PrivateRoutes'
 import PublicRoutes from './PublicRoutes'
 
 const AppRouter = () => {
-<<<<<<< HEAD
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-=======
   const [checking, setChecking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -54,7 +51,6 @@ const AppRouter = () => {
       </div>
     )
   }
->>>>>>> a24237f3e6e2832902dc02788f67783607f2d6e4
   return (
     <BrowserRouter>
     <Routes>

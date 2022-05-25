@@ -7,10 +7,8 @@ export const listCatsAsync = () => {
     const querySnapshot = await getDocs(collection(db, "cats"));
     const cats = [];
     querySnapshot.forEach((doc) => {
-      let data = doc.data();
-      data["id"] = doc.id;
       cats.push({
-        ...data,
+        ...doc.data(),
       });
     });
     dispatch(listSync(cats));

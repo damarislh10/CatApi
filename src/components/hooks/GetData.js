@@ -12,7 +12,7 @@ const GetData = () => {
 
 
 
-  return [dataCat];
+  return {getCat};
 };
 
 export default GetData;

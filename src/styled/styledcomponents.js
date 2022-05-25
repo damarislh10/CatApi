@@ -19,14 +19,15 @@ export const ButtonGoogle = styled.button`
   cursor: pointer;
   color: #fff;
   background: #13212c;
-  borderradius: 2px;
+  border-radius: 2px;
   padding: 0.34rem 0.6rem;
   border: none;
   outline: none;
   width: 100%;
-  margintop: 10px;
+  margin-top: 10px;
 `;
 
 export const ContainerCard = styled.div`
   background-color: aqua;
+  display:flex;
 `;

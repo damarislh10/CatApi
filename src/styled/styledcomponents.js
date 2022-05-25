@@ -28,14 +28,19 @@ export const ButtonGoogle = styled.button`
 `;
 
 export const ContainerCard = styled.div`
-  background-color: aqua;
-  display:flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
+export const Title = styled.h2`
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+`;
 export const ListCard = styled.ul`
-display: grid;
-grid-template-columns: repeat(auto-fill, 200px);
-gap: 40px;
-padding: 40px;
-justify-content: center;
-`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+`;

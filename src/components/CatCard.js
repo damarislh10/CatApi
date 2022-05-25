@@ -14,6 +14,7 @@ export const CatCard = ({ cat }) => {
     const classes = useStyles();
   console.log(cat);
   return (
+    
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia

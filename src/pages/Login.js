@@ -6,7 +6,8 @@ import { loginGoogle } from '../redux/actions/actionLogin';
 
 //Material UI
 import { makeStyles } from '@material-ui/core';
-import { ButtonGoogle } from '../styled/styledcomponents';
+import { ButtonGoogle, LinkRedirect } from '../styled/styledcomponents';
+import { useForm } from '../components/Hooks/useForm';
 
 const Login = () => {
   const classes = useStyles();
@@ -14,14 +15,24 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [values, handleInputChange, reset] = useForm({
+    email: '',
+    password: '',
+})
+
+  const { email, password } = values;
+
   const handleGoogle = () => {
       dispatch(loginGoogle());
       navigate('/');
   }
 
   const handleSubmit = e => {
-    e.preventDefault();
-  }
+  e.preventDefault();
+  dispatch(loginWithEmailPassAsync(email, password));
+  reset();
+  navigate('/');
+}
 
   return (
     <div className={classes.root}>
@@ -40,12 +51,16 @@ const Login = () => {
                 <h5>E-mail</h5>
                 <input type='email'
                 name='email' 
+                value={email}
                 placeholder="Enter email"
+                onChange={handleInputChange}
                 />
 
                 <h5>Password</h5>
                 <input type='password'
                 name='password'
+                value={password}
+                onChange={handleInputChange}
                 /> 
 
                 <button 
@@ -56,18 +71,18 @@ const Login = () => {
                 type='button'
                 onClick={handleGoogle}
                 >
-                    <img width='20px' height='20px' src='https://cdn-icons-png.flaticon.com/512/2965/2965278.png' alt='Google Icon'/>
+                    <img width='20px' height='20px' src='https://cdn-icons-png.flaticon.com/512/2875/2875404.png' alt='Google Icon'/>
                     Sign with Google</ButtonGoogle>
                    
-              
+         
             </form>
             
             <p>
-                <b>The CatsApp</b>
+                <b>Cats App</b>
             </p>
-            <Link to='/register'>
+            <LinkRedirect to='/register'>
                 Register
-            </Link>
+            </LinkRedirect>
 
          
         </div>

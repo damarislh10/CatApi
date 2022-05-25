@@ -8,53 +8,7 @@ import PrivateRoutes from './PrivateRoutes'
 import PublicRoutes from './PublicRoutes'
 
 const AppRouter = () => {
-<<<<<<< HEAD
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-=======
-  const [checking, setChecking] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const auth = getAuth()
-    onAuthStateChanged(auth, (user)=>{
-        if(user?.uid){
-          setIsLoggedIn(true);
-        }
-        else{
-            setIsLoggedIn(false)
-        }
-        setChecking(false)
-    })
-
-  
- }, [setIsLoggedIn, setChecking]);
-
-  
-  if(checking) {
-    return (
-      <div style={{
-        position: 'absolute',
-        backgroundColor: '#F5F5F5',
-        top: '0',
-        bottom: '0',
-        left: '0',
-        right: '0'
-      }}>
-        <div 
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-        >
-        <img width='200px' height='100px' src='https://cdn4.iconfinder.com/data/icons/animals-57/500/cat_animal_-512.png' alt='Loader'/>
-        </div>
-      </div>
-    )
-  }
->>>>>>> a24237f3e6e2832902dc02788f67783607f2d6e4
   return (
     <BrowserRouter>
     <Routes>

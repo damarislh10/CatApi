@@ -31,3 +31,11 @@ export const ContainerCard = styled.div`
   background-color: aqua;
   display:flex;
 `;
+
+export const ListCard = styled.ul`
+display: grid;
+grid-template-columns: repeat(auto-fill, 200px);
+gap: 40px;
+padding: 40px;
+justify-content: center;
+`

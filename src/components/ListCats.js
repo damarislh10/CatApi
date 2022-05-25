@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react'
-import GetData from './hooks/getData';
+import { useDispatch, useSelector } from 'react-redux';
+import { listCatsAsync } from '../redux/actions/actionCats';
 
 export const ListCats = () => {
-    const { getCat} = GetData();
-
+    const { cats } = useSelector((state) => state.cats);
+    console.log(cats);
+    const dispatch = useDispatch();
+  
     useEffect(() => {
-        console.log();
-    }, [])
+      dispatch(listCatsAsync());
+    }, []);
+
   return (
     <div>ListCats</div>
   )
